@@ -41,14 +41,6 @@ def supers_list(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-# @api_view(['GET'])
-# def supers_list(request):
-#     supers_param = request.query_params.get('super_type')
-#     supers = Super.objects.all()
-#     if supers_param:
-#         supers = supers.filter(super_type__name='super_type')
-#     serializer = SuperSerializer(supers, many=True)
-#     return Response(serializer.data)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def super_detail(request, pk):
